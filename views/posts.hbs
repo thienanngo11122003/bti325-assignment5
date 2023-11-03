@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+<title>Posts</title>
+<hr><br>
+<h2>Posts</h2>
+        <table class="table">
+            <!-- Table Headings -->
+            <thead>
+                <tr>
+                    <th> Post ID</th>
+                    <th>Title</th>
+                    <th>Post Date</th>
+                    <th>Category</th>
+                    <th>Published</th>
+                </tr>
+            </thead>
+            <!-- Table Body -->
+            <tbody>
+                {{#each posts}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{title}}</td>
+                    <td>{{postDate}}</td>
+                  <!--Category as a link -->
+                    <td><a href=/posts?category={{category}}>{{category}}</a></td>      
+                    <td>{{published}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+<!--Error message displaying -->
+<div class="col-md-12 text-center">
+    {{#unless posts}}
+    <strong>{{message}}</strong>
+    {{/unless}}
+    </div>
